@@ -12,7 +12,7 @@ dim(data)
 colnames(data)
 
 #Filter out the reverse hits and probable contaminants
-data <- filter(data, Reverse != "+", Potential.contaminant != "+")
+data <- data[data$Reverse != "+" & data$Potential.contaminant != "+",]
 
 #Can see some hits were filtered out
 dim(data)
